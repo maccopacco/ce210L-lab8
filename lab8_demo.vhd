@@ -32,13 +32,13 @@ architecture fsm of lab8_demo is
 
 begin
 
-    -- add equations for the flip-flop inputs
-   J2 <= ; 
-   K2 <= ;
-   J1 <= ;
-   K1 <= ;
-   J0 <= ;
-   K0 <= ;
+   -- add equations for the flip-flop inputs
+   J2 <= (Q2 AND NOT(Q0)) OR (Q2 AND COIN) OR (Q1 AND NOT(Q0) AND NOT(COIN)); 
+   K2 <= NOT(J2);
+   J1 <= (NOT(Q2) AND Q1) OR (Q1 AND NOT(Q0)) OR (NOT(Q2) AND Q0 AND NOT(COIN));
+   K1 <= NOT(J1);
+   J0 <= (NOT(Q2) AND NOT(Q1) AND COIN) OR (NOT(Q2) AND Q0 AND NOT(COIN)) OR (NOT(Q1) AND Q0 AND COIN) OR (Q2 AND Q1 AND COIN);
+   K0 <= NOT(J0);
 
    jkff_q2 : jk_ff port map (J2, K2, CLK, CLR, Q2, Q2n);
    jkff_q1 : jk_ff port map (J1, K1, CLK, CLR, Q1, Q1n);
@@ -50,7 +50,8 @@ begin
    LEDR(5) <= Q0;
    LEDR(0) <= Coin;
    
+	--ABC'D
     -- add equations for the output variable
-   Disp <= ;
+   Disp <= Q2 AND Q1 AND Q0;
 
 end fsm;
