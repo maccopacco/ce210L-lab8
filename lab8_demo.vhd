@@ -1,4 +1,22 @@
--- Need heacer!!!!!!!!!!!!
+----------------------------------------------------------------------------------
+-- Company:        Kettering University
+-- Engineer:       Max Dreher
+-- 
+-- Create Date:    6/8/2021
+-- Design Name:    
+-- Module Name:    FSM demo
+-- Project Name:   
+-- Target Devices: DE10-Lite Development board
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 1.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
 
 library IEEE;
 use IEEE.std_logic_1164.all;
